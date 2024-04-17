@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.SceneManagement;
 using CustomExtensions;
+using UnityEngine.UI;
 
 public class GameBehavior : MonoBehaviour, IManager
 {
@@ -13,6 +14,7 @@ public class GameBehavior : MonoBehaviour, IManager
     public int maxItems = 2;
     private int _itemsCollected = 0;
     private string _state;
+    public Text ScoreText;
 
     public delegate void DebugDelegate(string newText);
     public DebugDelegate debug = Print;
@@ -98,6 +100,7 @@ public class GameBehavior : MonoBehaviour, IManager
             {
                 labelText = "Ouch... that's gotta hurt.";
             }
+            ScoreText.text = ""+_playerHP;
         }
         
 
